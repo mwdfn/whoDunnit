@@ -113,68 +113,68 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Episode 7
-// let murderer = 'Professor Plum';
+let murderer = 'Professor Plum';
 
-// const changeMurderer = function() {
-//     murderer = 'Mr. Green';
+const changeMurderer = function() {
+    murderer = 'Mr. Green';
 
-//     const plotTwist = function() {
-//         let murderer = 'Colonel Mustard';
+    const plotTwist = function() {
+        let murderer = 'Colonel Mustard';
 
-//         const unexpectedOutcome = function() {
-//             murderer = 'Miss Scarlet';
-//         }
+        const unexpectedOutcome = function() {
+            murderer = 'Miss Scarlet';
+        }
 
-//     unexpectedOutcome();
-//     }
+    unexpectedOutcome();
+    }
 
-//     plotTwist();
-// }
+plotTwist();
+}
 
-// const declareMurderer = function() {
-//     return `The murderer is ${murderer}.`;
-// }
+const declareMurderer = function() {
+    return `The murderer is ${murderer}.`;
+}
 
-// changeMurderer();
-// const verdict = declareMurderer();
-// console.log(verdict);
-// OUTPUT = I don't know why this is Mr. Green??????
+changeMurderer();
+const verdict = declareMurderer();
+console.log(verdict);
+// OUTPUT = I think I figured it out. Mr. Green is the output because the 'changeMurderer()' function is called in the global scope, after functions within its own scope.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Episode 8
-const scenario = {
-    murderer: 'Mrs. Peacock',
-    room: 'Conservatory',
-    weapon: 'Lead Pipe'
-    };
+// const scenario = {
+//     murderer: 'Mrs. Peacock',
+//     room: 'Conservatory',
+//     weapon: 'Lead Pipe'
+//     };
 
-const changeScenario = function() {
-    scenario.murderer = 'Mrs. Peacock';
-    scenario.room = 'Dining Room';
+// const changeScenario = function() {
+//     scenario.murderer = 'Mrs. Peacock';
+//     scenario.room = 'Dining Room';
 
-    const plotTwist = function(room) {
-        if (scenario.room === room) {
-        scenario.murderer = 'Colonel Mustard';
-        }
-    const unexpectedOutcome = function(murderer) {
-        if (scenario.murderer === murderer) {
-            scenario.weapon = 'Candle Stick';
-            }
-        }
-        unexpectedOutcome('Colonel Mustard');
-    }
+//     const plotTwist = function(room) {
+//         if (scenario.room === room) {
+//         scenario.murderer = 'Colonel Mustard';
+//         }
+//     const unexpectedOutcome = function(murderer) {
+//         if (scenario.murderer === murderer) {
+//             scenario.weapon = 'Candle Stick';
+//             }
+//         }
+//         unexpectedOutcome('Colonel Mustard');
+//     }
 
-    plotTwist('Dining Room');
-}
+//     plotTwist('Dining Room');
+// }
 
-const declareWeapon = function() {
-    return `The weapon is ${scenario.weapon}.`
-}
+// const declareWeapon = function() {
+//     return `The weapon is ${scenario.weapon}.`
+// }
 
-changeScenario();
-const verdict = declareWeapon();
-console.log(verdict);
-// OUTPUT = 'The weapon is Candle Stick'. 
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
+// OUTPUT = 'The weapon is Candle Stick'. With scenerio.room being equal to 'Dining Room', the plotTwist function defines Colonel Mustard as the murderer. Now scenario murderer is equal to the argument passed into unexpectedOutcome, scenario.weapon is defined as 'Candle Stick' by that function.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 // Episode 9
@@ -190,6 +190,6 @@ console.log(verdict);
 
 // const verdict = declareMurderer();
 // console.log(verdict);
-// OUTPUT = 
+// OUTPUT = 'The murderer is Professor Plum'. Due to 'let murderer = 'Mrs. Peacock'' being inside the if statement's scope, it isn't accessed by the 'declareMurderer' function. So 'Professor Plum' remains the value of 'murderer'.
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
